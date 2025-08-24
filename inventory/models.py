@@ -6,11 +6,17 @@ class Location(models.Model):
     location_name = models.CharField(max_length=100)
     address = models.CharField(max_length=255)
 
+    def __str__(self):
+        return self.location_name
+
 
 class Product(models.Model):
     id = models.AutoField(primary_key=True)
     product_name = models.CharField(max_length=100)
     description = models.TextField()
+
+    def __str__(self):
+        return self.product_name
 
 
 class StockTransaction(models.Model):
